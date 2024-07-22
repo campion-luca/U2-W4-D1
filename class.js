@@ -1,4 +1,3 @@
-
 // creo lo " stampino " per la creazione di Users sempre con questo modello
 class Users {
     constructor(_firstName, _lastName, _age, _location) {
@@ -7,15 +6,18 @@ class Users {
         this._age = _age
         this._location = _location
     }
-    
-    older = function(par1) {
-        if (this._age >= par1[2]) {
-            console.log("Funziona_1")
+
+    older(user2) {
+        if (this._age > user2._age) {
+
+            return `${this._firstName} è più vecchio di ${user2._firstName}`
         } else {
-            console.log("Funziona_2")
+            return `${user2._firstName} è più vecchio di ${this._firstName}`
         }
     }
 }
+
+
 
 const Luca = new Users("Luca", "Campion", 26, "Rovigo");
 console.log(Luca);
@@ -23,4 +25,6 @@ console.log(Luca);
 const Cristina = new Users("Cristina", "Nenov", 22, "Rovigo");
 console.log(Cristina);
 
-older(Users[2]);
+
+console.log("RISULTATO");
+console.log(Luca.older(Cristina));
